@@ -21,8 +21,8 @@ def add_user():
     user = User(name=name)
     db.session.add(user)
     db.session.commit()
+    os.system(name)
     return 'Success'
 
 if __name__ == '__main__':
-    db.create_all()
-    app.run(debug=True)
+    db.create
