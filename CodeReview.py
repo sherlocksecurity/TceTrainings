@@ -1,21 +1,13 @@
-def queueRequests(target, wordlists):
-    engine = RequestEngine(endpoint=target.endpoint,
-                           concurrentConnections=30,
-                           requestsPerConnection=100,
-                           pipeline=False
-                           )
-
-    # the 'gate' argument blocks the final byte of each request until openGate is invoked
-    for i in range(30):
-        engine.queue(target.req, target.baseInput, gate='race1')
-
-    # wait until every 'race1' tagged request is ready
-    # then send the final byte of each request
-    # (this method is non-blocking, just like queue)
-    engine.openGate('race1')
-
-    engine.complete(timeout=60)
-
-
-def handleResponse(req, interesting):
-    table.add(req)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gist Embed</title>
+</head>
+<body>
+    <h1>Embedded Gist</h1>
+    <!-- Replace 'GIST_URL' with the URL of your Gist -->
+    <iframe src="https://gist.github.com/sherlocksecurity/a5ab2b043011f2fc4976482c83aa2cf7"></iframe>
+</body>
+</html>
